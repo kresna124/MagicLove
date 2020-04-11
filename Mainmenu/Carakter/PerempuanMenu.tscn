@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Mainmenu/Carakter/ceweGambar/2.png" type="Texture" id=1]
+[ext_resource path="res://Mainmenu/Carakter/ceweGambar/1.png" type="Texture" id=2]
+[ext_resource path="res://Mainmenu/Carakter/PerempuanMenu.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 34.241
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "perempuan",
+"speed": 1.0
+} ]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -5.71997, -19.0561 )
+scale = Vector2( 0.313847, 0.313847 )
+frames = SubResource( 2 )
+animation = "perempuan"

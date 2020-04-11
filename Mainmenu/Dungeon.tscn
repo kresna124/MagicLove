@@ -1,0 +1,122 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Mainmenu/Background/+bgbg.png" type="Texture" id=1]
+[ext_resource path="res://Mainmenu/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://Mainmenu/Btn/Dungeon/BeforeClear/dungeon1.png" type="Texture" id=3]
+[ext_resource path="res://Mainmenu/Btn/Dungeon/BeforeClear/dungeon2.png" type="Texture" id=4]
+[ext_resource path="res://Mainmenu/Btn/Dungeon/BeforeClear/dungeon4.png" type="Texture" id=5]
+[ext_resource path="res://Mainmenu/Btn/Dungeon/BeforeClear/dungeon3.png" type="Texture" id=6]
+[ext_resource path="res://Mainmenu/Btn/Dungeon/BeforeClear/dungeon5.png" type="Texture" id=7]
+[ext_resource path="res://Mainmenu/Btn/Dungeon/BeforeClear/dungeon6.png" type="Texture" id=8]
+[ext_resource path="res://Mainmenu/Btn/Dungeon/btn.png" type="Texture" id=9]
+
+[node name="Dungeon" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="+bgbg" type="Sprite" parent="."]
+position = Vector2( 511.35, 298.025 )
+scale = Vector2( 0.492575, 0.403045 )
+texture = ExtResource( 1 )
+
+[node name="lvl1" type="Button" parent="."]
+margin_left = -27.1733
+margin_top = 126.653
+margin_right = 181.827
+margin_bottom = 276.653
+icon = ExtResource( 3 )
+flat = true
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lvl2" type="Button" parent="."]
+margin_left = 132.559
+margin_top = 342.279
+margin_right = 349.559
+margin_bottom = 496.279
+icon = ExtResource( 4 )
+flat = true
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lvl3" type="Button" parent="."]
+margin_left = 310.135
+margin_top = 125.827
+margin_right = 526.135
+margin_bottom = 271.827
+icon = ExtResource( 6 )
+flat = true
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lvl4" type="Button" parent="."]
+margin_left = 479.721
+margin_top = 334.721
+margin_right = 696.721
+margin_bottom = 488.721
+icon = ExtResource( 5 )
+flat = true
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lvl5" type="Button" parent="."]
+margin_left = 630.268
+margin_top = 125.76
+margin_right = 845.268
+margin_bottom = 279.76
+icon = ExtResource( 7 )
+flat = true
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lvl6" type="Button" parent="."]
+margin_left = 830.036
+margin_top = 331.462
+margin_right = 1044.04
+margin_bottom = 498.462
+icon = ExtResource( 8 )
+flat = true
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="Button" parent="."]
+margin_left = -19.04
+margin_top = -7.93338
+margin_right = 108.96
+margin_bottom = 85.0666
+icon = ExtResource( 9 )
+flat = true
+clip_text = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="lvl1" to="." method="_on_lvl1_pressed"]
+[connection signal="pressed" from="lvl2" to="." method="_on_lvl2_pressed"]
+[connection signal="pressed" from="lvl3" to="." method="_on_lvl3_pressed"]
+[connection signal="pressed" from="lvl4" to="." method="_on_lvl4_pressed"]
+[connection signal="pressed" from="lvl5" to="." method="_on_lvl5_pressed"]
+[connection signal="pressed" from="lvl6" to="." method="_on_lvl6_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
