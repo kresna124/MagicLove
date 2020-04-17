@@ -44,3 +44,4 @@ func get_inputs() -> void:
 		velocity.y = jump_speed
 
 	target_speed = (Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")) * speed
+

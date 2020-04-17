@@ -31,22 +31,27 @@ func _on_lvl1_pressed():
 
 
 func _on_lvl2_pressed():
+	get_tree().change_scene("res://Dungeon/FileTscn/level2.tscn")
 	pass # Replace with function body.
 
 
 func _on_lvl3_pressed():
+	get_tree().change_scene("res://Dungeon/FileTscn/level3.tscn")
 	pass # Replace with function body.
 
 
 func _on_lvl4_pressed():
+	get_tree().change_scene("res://Dungeon/FileTscn/level4.tscn")
 	pass # Replace with function body.
 
 
 func _on_lvl5_pressed():
+	get_tree().change_scene("res://Dungeon/FileTscn/level5.tscn")
 	pass # Replace with function body.
 
 
 func _on_lvl6_pressed():
+	get_tree().change_scene("res://Dungeon/FileTscn/level6.tscn")
 	pass # Replace with function body.
 
 
