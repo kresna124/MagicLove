@@ -17,6 +17,7 @@ func _ready():
 
 
 func _on_playBtn_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Mainmenu/Dungeon.tscn")
 	pass # Replace with function body.
 
@@ -26,35 +27,42 @@ func _on_btnExit_pressed():
 
 
 func _on_lvl1_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Dungeon/FileTscn/level1.tscn")
 	pass # Replace with function body.
 
 
 func _on_lvl2_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Dungeon/FileTscn/level2.tscn")
 	pass # Replace with function body.
 
 
 func _on_lvl3_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Dungeon/FileTscn/level3.tscn")
 	pass # Replace with function body.
 
 
 func _on_lvl4_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Dungeon/FileTscn/level4.tscn")
 	pass # Replace with function body.
 
 
 func _on_lvl5_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Dungeon/FileTscn/level5.tscn")
 	pass # Replace with function body.
 
 
 func _on_lvl6_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Dungeon/FileTscn/level6.tscn")
 	pass # Replace with function body.
 
 
 func _on_back_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Mainmenu/Mainmenu.tscn")
 	pass # Replace with function body.

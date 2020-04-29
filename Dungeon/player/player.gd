@@ -8,24 +8,40 @@ var velocity : = Vector2()
 var target_speed : = 0.0
 var jump_speed : = -300.0
 
+var is_dead = false
+
 onready var animated_sprite : = $AnimatedSprite as AnimatedSprite
 
 
 func _process(delta: float) -> void:
-	if velocity.x > 0:
-		animated_sprite.flip_h = false
-	elif velocity.x < 0:
-		animated_sprite.flip_h = true
+	if is_dead == false:
+		if velocity.x > 0:
+			animated_sprite.flip_h = false
+		elif velocity.x < 0:
+			animated_sprite.flip_h = true
+	
+		if velocity.x != 0:
+			animated_sprite.play("lari")
+		else:
+			animated_sprite.play("diam")
+	
+		if !is_on_floor():
+			animated_sprite.play("lompat")
+		if get_slide_count() > 0:
+			for i in range(get_slide_count()):
+				if "ogre" in get_slide_collision(i).collider.name:
+					dead()
+				if "ogre2" in get_slide_collision(i).collider.name:
+					dead()
+				if "ogre3" in get_slide_collision(i).collider.name:
+					dead()
 
-	if velocity.x != 0:
-		animated_sprite.play("lari")
-	else:
-		animated_sprite.play("diam")
-
-	if !is_on_floor():
-		animated_sprite.play("lompat")
-
-
+func dead() :
+	is_dead = true
+	velocity = Vector2(0, 0)
+	animated_sprite.play("mati")
+	$Timer.start()
+	
 func _physics_process(delta: float) -> void:
 	get_inputs()
 
@@ -45,3 +61,8 @@ func get_inputs() -> void:
 
 	target_speed = (Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")) * speed
 
+
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://Mainmenu/Dungeon.tscn")
+	pass # Replace with function body.

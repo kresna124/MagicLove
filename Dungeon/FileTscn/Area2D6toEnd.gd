@@ -17,5 +17,5 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body, delay = 0.5):
-	get_tree().change_scene("res://Mainmenu/Dungeon.tscn")
+	get_tree().change_scene("res://Dungeon/FileTscn/end.tscn")
 	pass # Replace with function body.
