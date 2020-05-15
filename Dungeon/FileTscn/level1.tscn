@@ -478,13 +478,19 @@ smoothing_enabled = true
 editor_draw_screen = false
 editor_draw_limits = true
 
-[node name="ogre" parent="." instance=ExtResource( 34 )]
+[node name="ogre" parent="." groups=[
+"musuh",
+] instance=ExtResource( 34 )]
 position = Vector2( 1341.69, 499.768 )
 
-[node name="ogre3" parent="." instance=ExtResource( 34 )]
+[node name="ogre3" parent="." groups=[
+"musuh",
+] instance=ExtResource( 34 )]
 position = Vector2( 3063.96, 435.141 )
 
-[node name="ogre2" parent="." instance=ExtResource( 34 )]
+[node name="ogre2" parent="." groups=[
+"musuh",
+] instance=ExtResource( 34 )]
 position = Vector2( 2496.08, 499.612 )
 
 [node name="Area2D" type="Area2D" parent="."]

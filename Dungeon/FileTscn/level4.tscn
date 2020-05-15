@@ -422,31 +422,31 @@ smoothing_enabled = true
 editor_draw_screen = false
 editor_draw_limits = true
 
-[node name="KinematicBody2D2" parent="." instance=ExtResource( 34 )]
+[node name="ogre" parent="." instance=ExtResource( 34 )]
 position = Vector2( 595.388, 430.174 )
 
-[node name="KinematicBody2D3" parent="." instance=ExtResource( 34 )]
+[node name="ogre1" parent="." instance=ExtResource( 34 )]
 position = Vector2( 1071.63, 364.653 )
 
-[node name="KinematicBody2D4" parent="." instance=ExtResource( 34 )]
+[node name="ogre2" parent="." instance=ExtResource( 34 )]
 position = Vector2( 1589.4, 398.567 )
 
-[node name="KinematicBody2D5" parent="." instance=ExtResource( 34 )]
+[node name="ogre3" parent="." instance=ExtResource( 34 )]
 position = Vector2( 1995.84, 366.801 )
 
-[node name="KinematicBody2D6" parent="." instance=ExtResource( 34 )]
+[node name="ogre4" parent="." instance=ExtResource( 34 )]
 position = Vector2( 2614.25, 493.049 )
 
-[node name="KinematicBody2D7" parent="." instance=ExtResource( 34 )]
+[node name="ogre5" parent="." instance=ExtResource( 34 )]
 position = Vector2( 3217.83, 429.518 )
 
-[node name="KinematicBody2D8" parent="." instance=ExtResource( 34 )]
+[node name="ogre6" parent="." instance=ExtResource( 34 )]
 position = Vector2( 4422.59, 367.615 )
 
-[node name="KinematicBody2D9" parent="." instance=ExtResource( 34 )]
+[node name="ogre7" parent="." instance=ExtResource( 34 )]
 position = Vector2( 5033.35, 365.172 )
 
-[node name="KinematicBody2D10" parent="." instance=ExtResource( 34 )]
+[node name="ogre8" parent="." instance=ExtResource( 34 )]
 position = Vector2( 5561.6, 366.801 )
 
 [node name="Area2D" type="Area2D" parent="."]

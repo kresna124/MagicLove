@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Dungeon/Musuh/lvl4/gambar/jalan/7.png" type="Texture" id=1]
 [ext_resource path="res://Dungeon/Musuh/lvl4/gambar/jalan/4.png" type="Texture" id=2]
@@ -11,12 +11,30 @@
 [ext_resource path="res://Dungeon/Musuh/lvl4/gambar/jalan/1.png" type="Texture" id=9]
 [ext_resource path="res://Dungeon/Musuh/lvl4/gambar/jalan/2.png" type="Texture" id=10]
 [ext_resource path="res://Dungeon/Musuh/lvl4/ogre4.gd" type="Script" id=11]
+[ext_resource path="res://Dungeon/Musuh/lvl4/gambar/mati/7.png" type="Texture" id=12]
+[ext_resource path="res://Dungeon/Musuh/lvl4/gambar/mati/8.png" type="Texture" id=13]
+[ext_resource path="res://Dungeon/Musuh/lvl4/gambar/mati/9.png" type="Texture" id=14]
+[ext_resource path="res://Dungeon/Musuh/lvl4/gambar/mati/10.png" type="Texture" id=15]
+[ext_resource path="res://Dungeon/Musuh/lvl4/gambar/mati/4.png" type="Texture" id=16]
+[ext_resource path="res://Dungeon/Musuh/lvl4/gambar/mati/1.png" type="Texture" id=17]
+[ext_resource path="res://Dungeon/Musuh/lvl4/gambar/mati/2.png" type="Texture" id=18]
+[ext_resource path="res://Dungeon/Musuh/lvl4/gambar/mati/3.png" type="Texture" id=19]
+[ext_resource path="res://Dungeon/Musuh/lvl4/gambar/mati/5.png" type="Texture" id=20]
+[ext_resource path="res://Dungeon/Musuh/lvl4/gambar/mati/6.png" type="Texture" id=21]
+[ext_resource path="res://Dungeon/player/Bardarah/3.png" type="Texture" id=22]
+[ext_resource path="res://Dungeon/player/Bardarah/1.png" type="Texture" id=23]
+[ext_resource path="res://Dungeon/player/Bardarah/2.png" type="Texture" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40.9756, 50.7738 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "jalan",
@@ -30,13 +48,33 @@ script = ExtResource( 11 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -24.7772, 2.95815 )
-scale = Vector2( 0.127189, 0.144432 )
+position = Vector2( -28.6149, 9.63159 )
+scale = Vector2( 0.123305, 0.140021 )
 frames = SubResource( 2 )
-animation = "jalan"
+animation = "dead"
 flip_h = true
 
 [node name="rotasi" type="RayCast2D" parent="."]
 position = Vector2( 31.7977, 1.13207 )
 enabled = true
 cast_to = Vector2( 0, 55 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="healt_bar" type="TextureProgress" parent="."]
+margin_left = -33.7706
+margin_top = -69.3809
+margin_right = 37.2294
+margin_bottom = -57.3809
+max_value = 50.0
+value = 50.0
+texture_under = ExtResource( 23 )
+texture_over = ExtResource( 24 )
+texture_progress = ExtResource( 22 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="value_changed" from="healt_bar" to="." method="_on_healt_bar_value_changed"]

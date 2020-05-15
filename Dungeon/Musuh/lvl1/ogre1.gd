@@ -9,26 +9,42 @@ const SPEED = 30
 const FLOOR = Vector2(0, -1)
 
 var velocity2  = Vector2()
-
+export var darah = 20
 var direction = 1
+
+var is_dead= false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_node("healt_bar").max_value = darah
 	pass # Replace with function body.
 	
-func _physics_process(delta):
-	velocity2.x = SPEED * direction
-	
-	if direction ==1:
-		$AnimatedSprite.flip_h = true
+func dead():
+	if darah == 0 :
+		is_dead = true
+		velocity2 = Vector2(0,0)
+		$AnimatedSprite.play("dead")
+		$CollisionShape2D.disabled = true
+		$Timer.start()
 	else:
-		$AnimatedSprite.flip_h = false
+		darah = darah - 10
+		get_node("healt_bar").value = darah
+		print(darah)
+	
+func _physics_process(delta):
+	if is_dead== false :
+		velocity2.x = SPEED * direction
 		
-	$AnimatedSprite.play("jalan")
-	
-	velocity2.y += GRAVITY
-	
-	velocity2 = move_and_slide(velocity2, FLOOR)
+		if direction ==1:
+			$AnimatedSprite.flip_h = true
+		else:
+			$AnimatedSprite.flip_h = false
+			
+		$AnimatedSprite.play("jalan")
+		
+		velocity2.y += GRAVITY
+		
+		velocity2 = move_and_slide(velocity2, FLOOR)
 	
 	if is_on_wall():
 		direction = direction * -1
@@ -37,6 +53,12 @@ func _physics_process(delta):
 	if $rotasi.is_colliding() == false:
 		direction = direction * -1
 		$rotasi.position.x *= -1
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Timer_timeout():
+	queue_free()
+
