@@ -446,22 +446,10 @@ tile_data = PoolIntArray( -6094744, 0, 0, -6029209, 0, 0, -6029207, 7, 0, -59636
 [node name="body" parent="." instance=ExtResource( 3 )]
 position = Vector2( 53.1285, 384.253 )
 
-[node name="Camera2D" type="Camera2D" parent="body"]
-position = Vector2( -53.1285, -384.253 )
-current = true
-limit_left = 0
-limit_top = 0
-limit_right = 6290
-limit_bottom = 610
-limit_smoothed = true
-smoothing_enabled = true
-editor_draw_screen = false
-editor_draw_limits = true
-
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 6266.37, 330.47 )
+position = Vector2( 6243.37, 330.47 )
 shape = SubResource( 23 )
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]

@@ -19,6 +19,6 @@ func _ready():
 # warning-ignore:unused_argument
 # warning-ignore:unused_argument
 func _on_Area2D_body_entered(body, delay = 0.5):
-# warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Dungeon/FileTscn/level2.tscn")
+	if "body" in body.name:
+		get_tree().change_scene("res://Dungeon/FileTscn/level2.tscn")
 	pass # Replace with function body.

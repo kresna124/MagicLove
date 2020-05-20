@@ -15,11 +15,13 @@ var jump_speed : = -300.0
 var is_dead = false
 var nembak = false
 export var darah = 100 
+export var coin = 0
 
 onready var animated_sprite : = $AnimatedSprite as AnimatedSprite
 
 
-
+func _ready():
+	pass 
 	
 func _process(delta: float) -> void:
 	
@@ -39,62 +41,67 @@ func _process(delta: float) -> void:
 				
 	
 		if velocity.x != 0 && nembak == false:
+			get_node("UI/Label").text = str(coin)
 			animated_sprite.play("lari")
 		else:
 			if nembak == false :
+				get_node("UI/Label").text = str(coin)
 				animated_sprite.play("diam")
 	
 		if !is_on_floor():
 			if nembak == false :
+				get_node("UI/Label").text = str(coin)
 				animated_sprite.play("lompat")
 		
 		if get_slide_count() > 0:
 			for i in range(get_slide_count()):
 				if "ogre" in get_slide_collision(i).collider.name:
 					darah = darah - 5
-					get_node("healt_bar").value = darah
+					get_node("UI/healt_bar").value = darah
 					dead()
 					print(darah)
 				if "ogre1" in get_slide_collision(i).collider.name:
 					darah = darah - 5
-					get_node("healt_bar").value = darah
+					get_node("UI/healt_bar").value = darah
 					dead()
 					print(darah)
 				if "ogre2" in get_slide_collision(i).collider.name:
 					darah = darah - 5
-					get_node("healt_bar").value = darah
+					get_node("UI/healt_bar").value = darah
 					dead()
 					print(darah)
 				if "ogre3" in get_slide_collision(i).collider.name:
 					darah = darah - 5
-					get_node("healt_bar").value = darah
+					get_node("UI/healt_bar").value = darah
 					dead()
 					print(darah)
 				if "ogre4" in get_slide_collision(i).collider.name:
 					darah = darah - 5
-					get_node("healt_bar").value = darah
+					get_node("UI/healt_bar").value = darah
 					dead()
 					print(darah)
 				if "ogre5" in get_slide_collision(i).collider.name:
 					darah = darah - 5
-					get_node("healt_bar").value = darah
+					get_node("UI/healt_bar").value = darah
 					dead()
 					print(darah)
 				if "ogre6" in get_slide_collision(i).collider.name:
 					darah = darah - 5
-					get_node("healt_bar").value = darah
+					get_node("UI/healt_bar").value = darah
 					dead()
 					print(darah)
 				if "ogre7" in get_slide_collision(i).collider.name:
 					darah = darah - 5
-					get_node("healt_bar").value = darah
+					get_node("UI/healt_bar").value = darah
 					dead()
 					print(darah)
 				if "ogre8" in get_slide_collision(i).collider.name:
 					darah = darah - 5
-					get_node("healt_bar").value = darah
+					get_node("UI/healt_bar").value = darah
 					dead()
 					print(darah)
+					
+				
 				
 func dead() :
 	if darah <= 0 :

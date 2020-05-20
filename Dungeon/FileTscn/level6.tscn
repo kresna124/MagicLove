@@ -409,18 +409,6 @@ tile_data = PoolIntArray( -5898135, 0, 0, -5832600, 0, 0, -5832598, 9, 0, -57670
 [node name="body" parent="." instance=ExtResource( 3 )]
 position = Vector2( 28.1204, 387.024 )
 
-[node name="Camera2D" type="Camera2D" parent="body"]
-position = Vector2( -28.1204, -387.024 )
-current = true
-limit_left = 0
-limit_top = 0
-limit_right = 6265
-limit_bottom = 610
-limit_smoothed = true
-smoothing_enabled = true
-editor_draw_screen = false
-editor_draw_limits = true
-
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource( 4 )
 
